@@ -10,40 +10,35 @@ print("2. Alitas de pollo")
 print("3. Papas fritas")
 print("0. nada")
 opcion = input("Opcion: ")
-
-precio_pizza=3000
+precio=3000
 if tarjeta=="si":
-    dc=precio_pizza*0.10
-    descuento=precio_pizza-dc
+    descuento=precio*0.10
+    precio -= descuento
     if pizza == "pimiento" or pizza=="albahaca":
         ingredientes=500
         if doble == "si":
             ingrediente_doble = 2*ingredientes
-            if opcion == "1" or "2" or "3":
+            if opcion == "1":
                 complemento=500
-                print("disfruta tu pizza",pizza,"con mozzarella, tomate y doble",pizza,"con complemento de",)
-                if bebida == "si":
-                    bebida=1000
-                    print("No olvides la bebida de tu combo ")
-                    total=descuento+ingrediente_doble+complemento+bebida
-                    print("El total de tu compra es: %",total)
-                else:
-                    print("disfruta tu pizza",pizza,"con mozzarella, tomate y doble",pizza,"con complemento de empanadas de queso !")
-                    total=descuento+ingrediente_doble+complemento
-                    print("El total de tu compra es: %",total)
+                nombre_complemento="empanadas de queso"
+            elif opcion == "2":
+                complemento=500
+                nombre_complemento="alitas de pollo"
+            elif opcion == "3":
+                complemento=500
+                nombre_complemento="papas fritas"      
+            print("Disfruta tu pizza vegetariana con mozzarella, tomate y doble",pizza,"con complemento de",nombre_complemento,"!")
         else:
-            if opcion == "1" or "2" or "3":
+            if opcion == "1":
                 complemento=500
-                print("disfruta tu pizza",pizza,"con mozzarella, tomate",pizza,"con complemento de empanadas de queso !",)
-                if bebida == "si":
-                    bebida=1000
-                    print("No olvides la bebida de tu combo ")
-                    total=descuento+complemento+bebida
-                    print("El total de tu compra es: %",total)
-                else:
-                    print("disfruta tu pizza",pizza,"con mozzarella, tomate y doble",pizza,"con complemento de empanadas de queso !")
-                    total=descuento+complemento
-                    print("El total de tu compra es: %",total)
+                nombre_complemento="empanadas de queso"
+            elif opcion == "2":
+                complemento=500
+                nombre_complemento="alitas de pollo"
+            elif opcion == "3":
+                complemento=500
+                nombre_complemento="papas fritas"      
+            print("Disfruta tu pizza vegetariana con mozzarella, tomate y doble",pizza,"con complemento de",nombre_complemento,"!")      
     elif pizza == "tofu" or "nueces" or "brocoli":
         ingredientes=700
         if doble == "si":
