@@ -1,15 +1,17 @@
-"""
-from math import sqrt
-a=int(input("ingrese cateto a: "))
-b=int(input("ingrese cateto b: "))
-c = sqrt((a**2)+(b**2))
-print(rou"nd(c,2))
-x = float(input())
-n = int(input())
-c = int(input())
-a = 1+x/100
-b = a**n
-c = c*b
-final = round(c)
-print(final)
-"""
+import random
+import math
+a = random.randint(0,2)
+b = random.randint(0,2)
+print("¿donde está el tesoro?")
+i=True
+while i:
+    x = int(input("ingrese posicion x: "))
+    y = int(input("ingrese posicion y: "))
+    if x == a and y == b:
+        print("tesoro encontrado")
+        i=False
+    else:
+        d = math.sqrt((a-x)**2+(b-y)**2)
+        print("la distancia del tesoro es",d)
+        
+
