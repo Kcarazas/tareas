@@ -29,7 +29,7 @@ while contra:
             #mayusculas
             mayus=False
             for p in contraseña:
-                for a in letras:
+                for a in letra:
                     if a in p:
                         mayus=True
             #caracteres
@@ -58,7 +58,10 @@ while contra:
                 i+=1   
                        
             #verificaciones
-            if not minus:
+            if patron:
+                print("Contraseña no debe contener patrones.")
+                valido=False
+            elif not minus:
                 print("Debe incluir letras minusculas.")
                 valido=False
             elif not mayus:
@@ -69,18 +72,19 @@ while contra:
                 valido=False
             elif not caracter:
                 print("Debe incluir caracteres especiales válidos.")
-                valido=False                             
-            elif nombre in contraseña:
+                valido=False                      
+            elif nombre.lower() in contraseña:
                 print("Contraseña no debe incluir su nombre.")
                 valido=False
-            elif mascota in contraseña:
+            elif nombre.upper() in contraseña:
+                print("Contraseña no debe incluir su nombre.")
+                valido=False
+            elif mascota.lower() in contraseña:
                 print("Contraseña no debe incluir el nombre de su mascota.")
                 valido=False
-                
-            if patron:
-                print("Contraseña no debe contener patrones:")
+            elif mascota.upper() in contraseña:
+                print("Contraseña no debe incluir el nombre de su mascota.")
                 valido=False
-                
             #valida
             if valido:
                 print("contraseña valida")
