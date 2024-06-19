@@ -1,17 +1,19 @@
-import random
-import math
-a = random.randint(0,2)
-b = random.randint(0,2)
-print("¿donde está el tesoro?")
-i=True
-while i:
-    x = int(input("ingrese posicion x: "))
-    y = int(input("ingrese posicion y: "))
-    if x == a and y == b:
-        print("tesoro encontrado")
-        i=False
-    else:
-        d = math.sqrt((a-x)**2+(b-y)**2)
-        print("la distancia del tesoro es",d)
-        
+valor=input("palabra:")
+vocales="aeiou"
+contador=0
+for a in valor:
+    if a in vocales:
+        contador+=1
+print(contador)
 
+def get_top_10(resumen):
+    top_10 = []
+    for jugador in resumen:
+        partidos = resumen[jugador]
+        if len(top_10) < 10 or partidos > top_10[0][1]:
+            if len(top_10) == 10:
+                top_10.pop(0)
+            top_10.append((jugador, partidos))
+            top_10.sort() 
+            top_10.reverse()
+    return top_10
